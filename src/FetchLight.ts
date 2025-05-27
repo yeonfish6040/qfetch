@@ -22,7 +22,7 @@ const streamToFile = (readableStream: any, writableStream: any) => {
   });
 };
 
-export class RequestHelper {
+export class FetchLight {
   private BASE_URL: string;
 
   private CONTENT_TYPE: ContentType | string;
@@ -63,37 +63,37 @@ export class RequestHelper {
   }
 
   // SETTER ===============================================================================
-  setBaseUrl(baseURL: string): RequestHelper  {
+  setBaseUrl(baseURL: string): FetchLight  {
     this.BASE_URL = baseURL;
     return this;
   }
 
-  setContentType(contentType: ContentType | string): RequestHelper {
+  setContentType(contentType: ContentType | string): FetchLight {
     this.CONTENT_TYPE = contentType;
     return this;
   }
 
-  addHeader(key: HttpHeader | string, value: string): RequestHelper {
+  addHeader(key: HttpHeader | string, value: string): FetchLight {
     this.CUSTOM_HEADERS.set(key, value);
     return this;
   }
 
-  delHeader(key: HttpHeader): RequestHelper {
+  delHeader(key: HttpHeader): FetchLight {
     this.CUSTOM_HEADERS.delete(key);
     return this;
   }
 
-  setHeader(obj: HttpHeaderObject): RequestHelper {
+  setHeader(obj: HttpHeaderObject): FetchLight {
     this.CUSTOM_HEADERS = new Headers(obj);
     return this;
   }
 
-  resetHeader(): RequestHelper {
+  resetHeader(): FetchLight {
     this.CUSTOM_HEADERS = new Headers();
     return this;
   }
 
-  setAuth(schema: HttpAuthorizeSchema, value: string): RequestHelper {
+  setAuth(schema: HttpAuthorizeSchema, value: string): FetchLight {
     this.AUTHORIZATION = {
       schema,
       value
@@ -101,7 +101,7 @@ export class RequestHelper {
     return this;
   }
 
-  setBasicAuth(username: string, password: string): RequestHelper {
+  setBasicAuth(username: string, password: string): FetchLight {
     const authString = Buffer.from(`${username}:${password}`).toString("base64");
     this.AUTHORIZATION = {
       schema: "Basic",
@@ -124,22 +124,22 @@ export class RequestHelper {
     }
   }
 
-  resetAuth(): RequestHelper {
+  resetAuth(): FetchLight {
     this.AUTHORIZATION = null;
     return this;
   }
 
-  setCookie(key: string, value: string): RequestHelper {
+  setCookie(key: string, value: string): FetchLight {
     this.COOKIE.setCookie(key, value);
     return this;
   }
 
-  delCookie(key: string): RequestHelper {
+  delCookie(key: string): FetchLight {
     this.COOKIE.delCookie(key);
     return this;
   }
 
-  resetCookie(): RequestHelper {
+  resetCookie(): FetchLight {
     this.COOKIE.resetCookie();
     return this;
   }

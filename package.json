@@ -1,6 +1,6 @@
 {
   "name": "qfetch",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "light-weight fetch wrapper library for node js",
   "keywords": [
     "light",

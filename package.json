@@ -1,0 +1,29 @@
+{
+  "name": "qfetch",
+  "version": "1.0.0",
+  "description": "light-weight fetch wrapper library for node js",
+  "keywords": [
+    "light",
+    "weight",
+    "fetch",
+    "node"
+  ],
+  "homepage": "https://github.com/yeonfish6040/qfetch#readme",
+  "bugs": {
+    "url": "https://github.com/yeonfish6040/qfetch/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/yeonfish6040/qfetch.git"
+  },
+  "license": "ISC",
+  "author": "Yeonjun Lee <yeonfish6040@gmail.com>",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "typescript": "^5.8.3"
+  }
+}
